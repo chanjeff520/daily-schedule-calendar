@@ -1,8 +1,10 @@
-var today = moment();
-var weekday =  today.format("dddd");
-console.log(today.format("MMM Do, YYYY"));
-console.log(weekday)
+var today = moment().format('dddd MMMM Do YYYY');
+    $("#currentDay").text(today);
 
-$("#currentDay").append(today.format("MMM Do, YYYY"));
-$("#currentDay").append("<br>");
-$("#currentDay").append(weekday);
+// 
+function displayDate(){
+    var today = moment().format('dddd MMMM Do YYYY');
+    $("#currentDay").text(today);
+}
+
+setInterval(displayDate, 1000);
