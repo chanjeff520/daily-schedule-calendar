@@ -1,15 +1,20 @@
 
-var saveSchedule = {
-    box1 : "",
-    box2 : "",
-    box3 : "",
-    box4 : "",
-    box5 : "",
-    box6 : "",
-    box7 : "",
-    box9 : "",
-    box9 : ""
-};
+var saveSchedule = ["","","","","","","","",""];
+
+//renders the saved data to the textarea
+function renderSchedule(){
+    //get same data from the localstorage
+    saveSchedule = JSON.parse(localStorage.getItem('schedule'));
+    //check
+    if(saveSchedule == null){
+        saveSchedule=["1","1","1","1","1","1","1","1","1"];
+    }
+    //
+    for(var i = 0; i<saveSchedule.length; i++){
+        $(".container").children().eq(i).children().eq(1).text(saveSchedule[i])
+    }
+
+}
 
 
 
@@ -52,5 +57,5 @@ function changeColorBlock(){
         }
     }
 }
-
+renderSchedule();
 setInterval(timeElements, 1000);
