@@ -14,7 +14,7 @@
 ![Site](./assets/demo-schedule-calendar.gif)
 
 ## Deployed Link
-https://chanjeff520.github.io/online-code-quiz/
+https://chanjeff520.github.io/daily-schedule-calendar/
 
 ## Instructions
 <ol>
