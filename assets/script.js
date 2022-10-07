@@ -5,17 +5,18 @@ var saveSchedule = ["","","","","","","","",""];
 function renderSchedule(){
     //get same data from the localstorage
     saveSchedule = JSON.parse(localStorage.getItem('schedule'));
-    //check
+    //check if the theres a local storage of schedule
     if(saveSchedule == null){
         saveSchedule=["","","","","","","","",""];
     }
-    //
+    //render all 
     for(var i = 0; i<saveSchedule.length; i++){
         $(".container").children().eq(i).children().eq(1).val(saveSchedule[i])
     }
 
 }
 
+//save all changed textarea
 function savingSchedule(){
     for(var i=0; i<saveSchedule.length; i++){
         saveSchedule[i] = $(".container").children().eq(i).children().eq(1).val();
