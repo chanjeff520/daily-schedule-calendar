@@ -7,13 +7,20 @@ function renderSchedule(){
     saveSchedule = JSON.parse(localStorage.getItem('schedule'));
     //check
     if(saveSchedule == null){
-        saveSchedule=["1","1","1","1","1","1","1","1","1"];
+        saveSchedule=["","","","","","","","",""];
     }
     //
     for(var i = 0; i<saveSchedule.length; i++){
-        $(".container").children().eq(i).children().eq(1).text(saveSchedule[i])
+        $(".container").children().eq(i).children().eq(1).val(saveSchedule[i])
     }
 
+}
+
+function savingSchedule(){
+    for(var i=0; i<saveSchedule.length; i++){
+        saveSchedule[i] = $(".container").children().eq(i).children().eq(1).val();
+    }
+    localStorage.setItem("schedule", JSON.stringify(saveSchedule));
 }
 
 
@@ -57,5 +64,7 @@ function changeColorBlock(){
         }
     }
 }
+
 renderSchedule();
 setInterval(timeElements, 1000);
+$(".saveBtn").on("click", savingSchedule);
